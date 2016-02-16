@@ -1,0 +1,304 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Custom Admin</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/ToggleButton.css" rel="stylesheet" />
+    <link href="~/Content/RadioButtonList.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+
+        </div>
+        <div class="main">
+            <div class="service-container">
+                <div class="section-header">
+                    <div class="service-header-text">Select Service/Agreement :</div>
+                    <div class="service-selection">
+                        <div class="styled-select">
+                            <select class="mystyles">
+                                <option>Service 1</option>
+                                <option>Service 2</option>
+                                <option>Service 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="custom-field-type-container">
+                <div class="section-header">
+                    <div class="header-text">Select Custom Field Type :</div>
+                </div>
+                <table class="custom-field-type-selection">
+                    <tr>
+                        <td>
+                            <div class="outer">
+                                <div class="circle">
+                                </div>
+                                <div class="inner">button-add.custom-value
+                                    <div class="checkbox-icon">
+                                        <div class="text-field-text">Check Box</div>
+                                    </div>
+                                    <div class="font-text">Choose multiple value using checkboxes</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="outer">
+                                <div class="circle">
+                                </div>
+                                <div class="inner">
+                                    <div class="dropdown-icon">
+                                        <div class="text-field-text">Dropdown List</div>
+                                    </div>
+                                    <div class="font-text">Choose single value from dropdown list</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="outer">
+
+                                <div class="circle">
+                                </div>
+                                <div class="inner">
+                                    <div class="multidropdown-icon">
+                                        <div class="text-field-text">MultiSelect Dropdown</div>
+                                    </div>
+                                    <div class="font-text">Choose multiple values in dropdown</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="outer">
+                                <div class="circle">
+                                </div>
+                                <div class="inner">
+                                    <div class="radiobutton-icon">
+                                        <div class="text-field-text">Radio Button</div>
+                                    </div>
+                                    <div class="font-text">Choose a value using radio button</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="outer">
+                                <div class="circle">
+                                </div>
+                                <div class="inner">
+                                    <div class="textbox-icon">
+                                        <div class="text-field-text">Text Field</div>
+                                    </div>
+                                    <div class="font-text">Free form Text Field</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="second-section-container">
+                <div class="section-header section-subheader">
+                    <div class="header-text">Add Custom Fields as : <div class="custom-field-type"></div></div>
+                </div>
+                <div class="heirarchy-container">
+                    <div class="heirarchy-container-header">
+                        <div class="header-text heirarchy-text">Choose heirarchy : </div>
+                        <div class="switch">
+                            <input id="heirarchySelectionToggle" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+                            <label for="heirarchySelectionToggle"></label>
+                        </div>
+                        <div class="info"></div>
+                    </div>
+                    <div class="add-heirarchy-container">
+                        <div class="add-heirarchy-selection">
+                            @*<div class="add-heirarchy-selection-row first">
+                                <div class="add-heirarchy-first-column">
+                                    <label class="label-text wide">Heirarchy Level :</label>
+                                </div>
+                                <div class="heirarchy-selection">
+                                    <div class="styled-select">
+                                        <select class="mystyles">
+                                            <option>Level 1</option>
+                                            <option>Level 2</option>
+                                            <option>Level 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>*@
+                            <div class="add-heirarchy-selection-row second">
+                                <button id="all" class="button toggle">
+                                    Toggle All
+                                </button>
+                                <div class="tree">
+                                    <ul id="nestedlist">
+                                        <li>
+                                            <div class="list-border-minus"></div>
+                                            <a>
+                                                First Classification
+                                            </a>
+                                            <ul>
+                                                <li><div class="list-border-minus"></div><a>Second Classification</a>
+                                                <li><div class="list-border-minus"></div><a>Second Classification</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="list-border-minus"></div>
+                                            <a>
+                                                First Classification
+                                            </a>
+                                            <ul>
+                                                <li>
+                                                    <div class="list-border-minus"></div>
+                                                    <a>
+                                                        Second Classification
+                                                    </a>
+                                                    <ul>
+                                                        <li><div class="list-border-minus"></div><a>Third Classification</a></li>
+                                                        <li><div class="list-border-minus"></div><a>Third Classification</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><div class="list-border-minus"></div><a>Second Classification</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="list-border-minus"></div>
+                                            <a>
+                                                First Classification
+                                            </a>
+                                            <ul>
+                                                <li><div class="list-border-minus"></div><a>Second Classification</a></li>
+                                                <li><div class="list-border-minus"></div><a>Second Classification</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="list-border-minus"></div>
+                                            <a>
+                                                First Classification
+                                            </a>
+                                            <ul>
+                                                <li><div class="list-border-minus"></div><a>Second Classification</a></li>
+                                                <li><div class="list-border-minus"></div><a>Second Classification</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="list-border-minus"></div>
+                                            <a>
+                                                First Classification
+                                            </a>
+                                            <ul>
+                                                <li><div class="list-border-minus"></div><a>Second Classification</a></li>
+                                                <li><div class="list-border-minus"></div><a>Second Classification</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-custom-container">
+                    <div class="custom-container">
+                        <div class="section-container level">
+                            <div class="add-custom-field-row">
+                                <div class="row-first-column">
+                                    <label class="label-text wide">Field Name :</label>
+                                </div>
+                                <div class="row-second-column">
+                                    <input type="text" id="txtCustomFieldName" class="textbox-style" />
+                                </div>
+                            </div>
+                            <div class="add-custom-field-row">
+                                <div class="row-first-column">
+                                    <label class="label-text wide">Data Type :</label>
+                                </div>
+                                <div class="row-second-column">
+                                    <div class="radio-buttons-selection">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="add-custom-field-row">
+                                <div class="row-first-column">
+                                    <label class="label-text wide">Visible :</label>
+                                </div>
+                                <div class="switch">
+                                    <input id="visibleToggle" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+                                    <label for="visibleToggle"></label>
+                                </div>
+                            </div>
+                            <div class="add-custom-field-row">
+                                <div class="row-first-column">
+                                    <label class="label-text wide">Chart :</label>
+                                </div>
+                                <div class="switch">
+                                    <input id="chartToggle" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+                                    <label for="chartToggle"></label>
+                                </div>
+                            </div>
+                            <div class="add-custom-field-row">
+                                <div class="row-first-column">
+                                    <label class="label-text wide">Mandatory :</label>
+                                </div>
+                                <div class="switch">
+                                    <input id="mandatoryToggle" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+                                    <label for="mandatoryToggle"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="custom-value-container">
+                            <div class="add-custom-value-container">
+                                <div class="add-custom-value-row first">
+                                    <div class="add-heirarchy-first-column">
+                                        <label class="label-text wide">Add Custom Value :</label>
+                                    </div>
+                                </div>
+                                <div class="add-custom-value-row second">
+                                    <div class="add-custom-value">
+                                        <input id="custom-value-feed" type="text" class="textbox-style" />
+                                        <button class="button-add custom-value">Add</button>
+                                    </div>
+                                </div>
+                                <div class="add-custom-value-row third">
+                                    <div class="container">
+                                        <div class="list-group">
+                                        </div>
+                                        <div class="custom-sort-container">
+                                            <div class="sort-group">
+                                                Sort Value :
+                                                <div class="data-type-container margin-left">
+                                                    <input type="radio" id="manual" name="sort" value="manual" checked>
+                                                    <label for="manual">Manual</label>
+                                                    <input type="radio" id="automatic" name="sort" value="automatic">
+                                                    <label for="automatic">Automatic</label>
+                                                </div>
+                                                <div class="sort-arrow-group">
+                                                    <ul style="margin-left:5px;">
+                                                        <li title="Move Up" class="sort-up" id="sortUp"></li>
+                                                        <li title="Move Down" class="sort-down" id="sortDown"></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-button-section">
+                        <button class="button save">Save</button>
+
+                        <button class="button cancel">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <script src="~/Scripts/jquery-1.9.1.js" type="text/javascript"></script>
+            <script src="~/Scripts/CustomFieldAdmin.js" type="text/javascript"></script>
+</body>
+</html>

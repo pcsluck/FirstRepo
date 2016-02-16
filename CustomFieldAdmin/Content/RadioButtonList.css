@@ -1,0 +1,25 @@
+
+.data-type-container > input[type=radio] {
+    display: none;
+    margin: 10px;
+}
+
+    .data-type-container > input[type=radio] + label {
+        display: inline-block;
+        margin: -3px;
+        padding: 7px;
+        background-color: #e7e7e7;
+        border-color: #ddd;
+        font-size: 12px !important;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+        cursor: pointer;
+    }
+
+    .data-type-container > input[type=radio]:checked + label {
+        background-image: none;
+        background-color: #5CB176;
+        color: white;
+    }
